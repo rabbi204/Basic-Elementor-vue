@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Elemnetor</title>
+	<!-- ALL CSS FILES  -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body class="bg-dark">
+
+	<section class="elementor">
+		<div class="row">
+			<div class="col-3 bg-primary">
+				<div class="container">
+					<div class="form-group mt-4">
+						<label class="text-light" for="header">Title</label>
+						<input v-model="title" type="text" class="form-control">
+					</div>
+					<div class="form-group">
+						<label class="text-light" for="textarea">Content</label>
+						<textarea v-model="content" class="form-control" name="" id="textarea" cols="30" rows="10"></textarea>
+					</div>
+					<div class="form-group">
+						<label class="text-light pr-3" for="cl">Color:</label><input v-model="color" type="color" id="cl">
+					</div>
+					<div class="form-group">
+						<label class="text-light pr-3" for="ff">font-family</label>
+						<select v-model="fontfamily" name="" id="ff">
+							<option value="">-select-</option>
+							<option value="Subway">Subway</option>
+							<option value="Times New Roman">Times New Roman</option>
+							<option value="Arial">Arial</option>
+							<option value="Impact">Impact</option>
+							<option value="Sigmar One">Sigmar One</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label class="text-light pr-3" for="ta">Text-align:</label>
+						<select v-model="textalign" name="" id="ta">
+							<option value="">-select-</option>
+							<option value="left">left</option>
+							<option value="center">center</option>
+							<option value="right">right</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label class="text-light pr-3" for="ta">Text-Transform:</label>
+						<select v-model="texttransform" name="" id="ta">
+							<option value="">-select-</option>
+							<option value="capitalize">capitalize</option>
+							<option value="uppercase">uppercase</option>
+							<option value="lowercase">lowercase</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label class="text-light pr-3" for="fs">Font-Size:</label><input v-model="fontsize" type="number" id="fs">
+					</div>
+				</div>
+			</div>
+			<div class="col-9 bg-white">
+				<div class="card mt-5 bg-warning">
+					<div class="card-body">
+						<h2 :style="'color:'+ color + ';font-family:' + fontfamily +';text-align:'+ textalign + '; text-transform:' + texttransform">{{ title }}</h2>
+						<p :style="'font-color:'+ color+'; font-size:'+ fontsize+'px;'">{{ content }}</p>	
+						<a :class="btn.mclass + ' '+ btn.pclass  +' '+ btn.sclass" :href="btn.link">{{ btn.title }}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<!-- JS FILES  -->
+	<script src="assets/js/jquery-3.4.1.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+
+	<!-- Vue JS Load  -->
+	<script src="assets/js/vue.js"></script>
+	<script src="assets/js/vue-router.js"></script>
+
+	<!-- custom js load -->
+	<script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>
